@@ -1,26 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mía</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #f5f5f5;
+}
+.contenedor {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+  height: 120px;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+}
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #00c2a8;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+#respuesta {
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+</style>
+</head>
+
 <body>
+<div class="contenedor">
+  <h1>Mía</h1>
+  <p>Esta aplicación no decide por vos.</p>
 
-</body><h1>Mía</h1>
+  <textarea id="pregunta" placeholder="Escribí tu pregunta acá..."></textarea>
+  <button onclick="responder()">Preguntar</button>
 
-<p>Esta aplicación no decide por vos.
-Escucha, aprende y solo actúa cuando vos lo ordenás.</p>
-
-<input type="text" id="pregunta" placeholder="Escribí tu pregunta acá" style="width:90%; padding:10px;">
-
-<br><br>
-
-<button onclick="responder()">Preguntar</button>
-
-<p id="respuesta"></p>
+  <div id="respuesta"></div>
+</div>
 
 <script>
 function responder() {
   const texto = document.getElementById("pregunta").value;
-  if (texto === "") {
-    document.getElementById("respuesta").innerText = "Decime algo primero.";
-    return;
-  }
+  if (!texto.trim()) return;
+
   document.getElementById("respuesta").innerText =
-    "Todavía estoy aprendiendo. Me preguntaste: " + texto;
+    "Te escuché. Todavía no tengo acceso a internet ni razonamiento activo.\n" +
+    "Este es el cuerpo vivo de la app.\n\n" +
+    "Pregunta recibida:\n" + texto;
 }
 </script>
+
+</body>
+</html>
+
